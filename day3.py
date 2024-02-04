@@ -60,7 +60,7 @@ def getNums(arr, i, y):
     (getNum(res, arr, i-1, y+1))
   return res
 
-input = open(sys.argv[1]).read().strip()
+input = open('input/day3.txt').read().strip()
 # rows, cols = (len(input.splitlines()), len(input.splitlines()[0]))
 # arr = [[0 for i in range(cols)] for j in range(rows)]
 # for i,line in enumerate(input.splitlines()):

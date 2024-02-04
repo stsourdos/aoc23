@@ -1,10 +1,4 @@
-input = """two1nine
-eightwothree
-abcone2threexyz
-xtwone3four
-4nineeightseven2
-zoneight234
-7pqrstsixteen"""
+input = open('input/day1.txt').read().strip()
 sum = 0
 for line in input.splitlines():
   line_list = [];
@@ -14,7 +8,7 @@ for line in input.splitlines():
     for d,val in enumerate(['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']):
       if line[i:].startswith(val):
         line_list.append(str(d+1))
-  print (line_list)
+  #print (line_list)
   sum+=int(line_list[0]+line_list[-1])
 
 print(sum)
