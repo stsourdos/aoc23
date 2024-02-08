@@ -1,4 +1,3 @@
-
 from collections import Counter
 import functools
 
@@ -37,7 +36,6 @@ class Play(object):
   
   def playtype(self):
     return self.playtype1(self.cards)
-
 
 def alphatonum(c):
   if c=='A': return 14
