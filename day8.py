@@ -4,13 +4,11 @@ import re
 input = open('aoc23/input/day8.txt').read().strip()
 directions = input.splitlines()[0]
 map = dict()
-a_nodes = []
 for kv in input.splitlines():
   if '=' in kv:
     regex = re.search("(\w{3}) = \((\w{3}), (\w{3})\)", kv)
     map[regex.group(1)] = (regex.group(2), regex.group(3))
-    if regex.group(1).endswith('A'):
-      a_nodes.append(regex.group(1))
+a_nodes = [x for x in map if x[2] == 'A']
 
 def walk(current):
   pos = 0
