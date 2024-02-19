@@ -34,16 +34,18 @@ while len(queue) > 0:
         queue.append((pos[0], pos[1] + 1))
 print(len(visited)/2)
 
+def count_invs(i,j):
+  cnt = 0
+  for l in range(j):
+    if (i, l) in visited and arr[i][l] in {'J','L','|'}:
+      cnt +=1
+  return cnt
+
 tiles = 0
 for i in range(0, X_MAX):
-  in_loop = False
-  tmp = 0
   for j in range(0, Y_MAX):
-    if (i,j) in visited:
-      in_loop = not in_loop
-      if not in_loop:
-        tiles += tmp
-        tmp = 0
-    elif in_loop:
-      tmp += 1
+    if not (i,j) in visited:
+      cnt = count_invs(i,j)
+      if cnt > 0 and cnt %2 == 1:
+        tiles += 1
 print(tiles)# 502 too high
